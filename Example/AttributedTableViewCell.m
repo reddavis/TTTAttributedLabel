@@ -68,7 +68,7 @@ static inline NSRegularExpression * ParenthesisRegularExpression() {
     
     NSMutableDictionary *mutableActiveLinkAttributes = [NSMutableDictionary dictionary];
     [mutableActiveLinkAttributes setValue:[NSNumber numberWithBool:NO] forKey:(NSString *)kCTUnderlineStyleAttributeName];
-    [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor redColor] CGColor] forKey:(NSString *)kCTForegroundColorAttributeName];
+    [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor redColor] CGColor] forKey:NSForegroundColorAttributeName];
     [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.1f] CGColor] forKey:(NSString *)kTTTBackgroundFillColorAttributeName];
     [mutableActiveLinkAttributes setValue:(__bridge id)[[UIColor colorWithRed:1.0f green:0.0f blue:0.0f alpha:0.25f] CGColor] forKey:(NSString *)kTTTBackgroundStrokeColorAttributeName];
     [mutableActiveLinkAttributes setValue:[NSNumber numberWithFloat:1.0f] forKey:(NSString *)kTTTBackgroundLineWidthAttributeName];
@@ -122,7 +122,7 @@ static inline NSRegularExpression * ParenthesisRegularExpression() {
                 CFRelease(italicFont);
                 
                 [mutableAttributedString removeAttribute:(NSString *)kCTForegroundColorAttributeName range:result.range];
-                [mutableAttributedString addAttribute:(NSString *)kCTForegroundColorAttributeName value:(__bridge id)[[UIColor grayColor] CGColor] range:result.range];
+                [mutableAttributedString addAttribute:NSForegroundColorAttributeName value:(__bridge id)[[UIColor grayColor] CGColor] range:result.range];
             }
         }];
         

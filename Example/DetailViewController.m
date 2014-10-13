@@ -127,8 +127,8 @@ static inline NSRegularExpression * ParenthesisRegularExpression() {
                 [mutableAttributedString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)italicFont range:result.range];
                 CFRelease(italicFont);
                 
-                [mutableAttributedString removeAttribute:(NSString *)kCTForegroundColorAttributeName range:result.range];
-                [mutableAttributedString addAttribute:(NSString*)kCTForegroundColorAttributeName value:(id)[[UIColor grayColor] CGColor] range:result.range];
+                [mutableAttributedString removeAttribute:NSForegroundColorAttributeName range:result.range];
+                [mutableAttributedString addAttribute:NSForegroundColorAttributeName value:(id)[[UIColor grayColor] CGColor] range:result.range];
             }
         }];
         
